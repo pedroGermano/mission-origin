@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+
 :root{
   --header-height: 4.5rem;
   --hue: 159;
@@ -34,6 +38,11 @@ img{
   height: auto;
 }
 
+.title{
+  font: 700 1.875rem "Poppins", sans-serif;
+  color: var(--title-color);
+}
+
 body{
   font: 400 1em "DM Sans", sans-serif;
   color: var(--text-color);
@@ -41,10 +50,7 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-h1{
-  font: 700 1.875rem "Poppins", sans-serif;
-  color: var(--title-color);
-}
+
 
 .button{
   display: inline-flex;
@@ -64,7 +70,6 @@ h1{
 }
 
  #header{
- 
   display: flex; 
   position: fixed;
   width: 100%;
@@ -82,6 +87,37 @@ nav{
   justify-content: space-between;
   align-items: center;
   height: var(--header-height);
+  width: 100%;
+}
+
+nav ul li{
+  text-align: center;
+}
+
+nav.show .menu{
+  display: grid;
+  place-content: center;  
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+nav .menu{
+  visibility: hidden;
+  opacity: 0;
+}
+
+nav.show .menu{
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .logo{
@@ -94,7 +130,7 @@ nav{
 }
 
 main{
-  margin-top: var(--header-height);
+  margin-top:  calc(var(--header-height) + 2rem);
 }
 
 .container{
